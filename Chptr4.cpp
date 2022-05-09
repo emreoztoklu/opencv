@@ -21,8 +21,12 @@ int main(void) {
 
 
 	circle(img, Point(256, 256), 155, Scalar(ORANGE),FILLED);
+	rectangle(img, Point(130, 226), Point(382, 286), Scalar(WHITE), FILLED);
+	line(img, Point(130, 296), Point(382, 296), Scalar(WHITE), 2);
 
 
+
+	putText(img, "This is a test text", Point(137, 262), FONT_HERSHEY_DUPLEX, 0.8, Scalar(ORANGE), 2);
 
 	imshow("Image", img);
 	waitKey(0);
