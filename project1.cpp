@@ -21,13 +21,13 @@ Mat img;
 vector<vector<int>>newPoints;   // {{x,y,color_val}, {x,y,color_val2}....
 
 
-vector<vector<int>>myColors{{8,  41, 187, 22,  255, 255,},	//ORANGE
+vector<vector<int>>myColors{{1,  211, 86, 178,  255, 255,},	//ORANGE
 							{24, 32, 120, 45,  255, 255,},  //SARI
 							{67, 72, 156, 102, 126, 255,},	//GREEN
 						   };
 
 vector<Scalar>myColorValues{{ORANGE}, {YELLOW}, {GREEN}, {PINK},
-							{WHITE},{BLACK}, {BLUE},{RED}};
+							{WHITE},  {BLACK},  {BLUE},  {RED}};
 
 /*çevre, þekil 'i al */
 Point getContours(Mat imgDil) {
@@ -44,7 +44,7 @@ Point getContours(Mat imgDil) {
 	Point myPoint(0, 0);
 
 	for (int i = 0; i < contours.size(); i++) {
-		auto area = contourArea(contours[i]);
+		auto area = contourArea(contours[i]);  //Shape area
 		cout << "Object_Area: " << area << endl;
 
 		if (area > 1000) {
@@ -86,21 +86,26 @@ void findColor(Mat image) {
 	}
 }
 
-void drawOnCanvas(vector<vector<int>> newPoints, vector<Scalar> drawnColor){
+void drawOnCanvas(vector<vector<int>> drawnPoints, vector<Scalar> drawnColor){
 
+	int pen_ticknes = 10;
 
+	for (int i = 0; i < drawnPoints.size(); i++) {
+		circle(img, Point(drawnPoints[i][0], drawnPoints[i][1]), pen_ticknes, myColorValues[drawnPoints[i][2]], FILLED);
+	}
 }
 
 
 void main(void) {
 
-	VideoCapture cap(0);
+	VideoCapture cap(1);
 
 	while (true) {
 
 		cap.read(img);
 
 		findColor(img);
+		drawOnCanvas(newPoints, myColorValues);
 
 
 		imshow("Camera_Image", img);

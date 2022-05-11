@@ -78,6 +78,8 @@ void getContours(Mat imgDil, Mat img) {
 
 			cout << "\n" << endl;
 		}
+
+
 	}
 }
 

@@ -19,7 +19,7 @@ int hmax = 179, smax = 255, vmax = 255;
 //int hmin = 0,	  smin = 0,   vmin = 0;
 //int hmax = 179, smax = 255, vmax = 255;
 
-VideoCapture cap(0);
+VideoCapture cap(1);
 Mat img;
 
 
