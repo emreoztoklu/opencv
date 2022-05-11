@@ -1,3 +1,0 @@
-﻿  Chptr6.cpp
-F:\Emre_Dokumanlar\PROJECTS\VS_opencv\opencv\Chptr6.cpp(18,17): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  opencv.vcxproj -> F:\Emre_Dokumanlar\PROJECTS\VS_opencv\opencv\x64\Debug\opencv.exe

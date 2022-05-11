@@ -23,7 +23,7 @@ int main(void) {
 ////////////////////BLUR IMAGE////////////////////////////
 	Mat imgBlur;
 
-	GaussianBlur(img, imgBlur,Size(3,3),5,0);
+	GaussianBlur(imgGray, imgBlur,Size(3,3),5,0);
 	imshow("BLUR_Image", imgBlur);
 
 ////////////////////EDGE DETECTOR//////////////////////////
